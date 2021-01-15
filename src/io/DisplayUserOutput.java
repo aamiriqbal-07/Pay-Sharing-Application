@@ -4,11 +4,11 @@ import models.User;
 
 import java.util.ArrayList;
 
-public class DiaplayUserOutput implements OutputCommand {
+public class DisplayUserOutput implements OutputCommand {
 
     private ArrayList<User> registerdUsers;
 
-    public DiaplayUserOutput(ArrayList<User> registeredUsers) {
+    public DisplayUserOutput(ArrayList<User> registeredUsers) {
         this.registerdUsers = registeredUsers;
     }
 

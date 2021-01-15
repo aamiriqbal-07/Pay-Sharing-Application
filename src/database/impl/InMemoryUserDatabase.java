@@ -48,7 +48,6 @@ public class InMemoryUserDatabase implements UserDatabase {
         int existingUserIndex = REGISTERED_USERS.indexOf(existingUser);
         existingUser.setName(name);
         existingUser.setPhoneNumber(phoneNumber);
-//        REGISTERED_USERS.add(existingUserIndex, existingUser);
         return existingUser;
     }
 }

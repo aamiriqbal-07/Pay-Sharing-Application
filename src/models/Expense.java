@@ -11,7 +11,8 @@ public class Expense {
     private ArrayList<Integer> debterId;
     private Integer payerId;
 
-    public Expense(String discription, Double cost, ArrayList<Integer> debterId, Integer payerId) {
+    public Expense(Integer expenseId, String discription, Double cost, ArrayList<Integer> debterId, Integer payerId) {
+        this.expenseId = expenseId;
         this.discription = discription;
         this.cost = cost;
         this.debterId = debterId;

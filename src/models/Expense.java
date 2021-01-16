@@ -38,4 +38,20 @@ public class Expense {
     public Integer getPayerId() {
         return payerId;
     }
+
+    public void setDiscription(String discription) {
+        this.discription = discription;
+    }
+
+    public void setCost(Double cost) {
+        this.cost = cost;
+    }
+
+    public void setDebterId(ArrayList<Integer> debterId) {
+        this.debterId = debterId;
+    }
+
+    public void setPayerId(Integer payerId) {
+        this.payerId = payerId;
+    }
 }

@@ -2,11 +2,11 @@ package io;
 
 public class EditUserInput implements InputCommand{
 
-    private Integer Id;
+    private Integer id;
     private String name;
     private String phoneNumber;
     public EditUserInput(Integer Id, String name, String phoneNumber) {
-        this.Id = Id;
+        this.id = Id;
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
@@ -20,6 +20,6 @@ public class EditUserInput implements InputCommand{
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 }

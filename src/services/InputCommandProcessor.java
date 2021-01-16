@@ -12,14 +12,16 @@ import java.util.Optional;
 public class InputCommandProcessor {
     private UserService userService = new UserServiceImpl();
     private ExpenseService expenseService = new ExpenseServiseImpl();
-//    private ExpenseService expenseService;
-//    private DebtService debtService;
+
     public String processInputCommand(InputCommand inputCommand) {
+
         AddUserInput addUserInput;
         DisplayUserInput displayUserInput;
         EditUserInput editUserInput;
         AddExpenseInput addExpenseInput;
         DisplayExpenseInput displayExpenseInput;
+        EditExpenseInput editExpenseInput;
+
         if (inputCommand instanceof AddUserInput) {
 
             addUserInput = (AddUserInput) inputCommand;
@@ -57,6 +59,14 @@ public class InputCommandProcessor {
 
             DisplayExpenseOutput displayExpenseOutput = new DisplayExpenseOutput(registeredExpenses);
             return displayExpenseOutput.getMessage();
+        } else if(inputCommand instanceof EditExpenseInput) {
+
+            editExpenseInput = (EditExpenseInput) inputCommand;
+            Optional<Expense> expense = expenseService.updateExpenseById(editExpenseInput.getExpenseId(), editExpenseInput.getDescription(),
+                                              editExpenseInput.getCost(), editExpenseInput.getDebterId(), editExpenseInput.getPayerId());
+            EditExpenseOutput editExpenseOutput = new EditExpenseOutput(expense);
+            return editExpenseOutput.getMessage();
+
         }
 
 //        else

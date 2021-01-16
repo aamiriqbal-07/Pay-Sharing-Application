@@ -9,6 +9,7 @@ import util.ExpenseDataValidator;
 import util.IdGenerator;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class ExpenseServiseImpl implements ExpenseService {
 
@@ -38,5 +39,10 @@ public class ExpenseServiseImpl implements ExpenseService {
     @Override
     public ArrayList<Expense> getAllRegisteredExpenses() {
         return expenseDatabase.getAllRegisteredExpense();
+    }
+
+    @Override
+    public Optional<Expense> updateExpenseById(Integer expenseId, String description, Double cost, ArrayList<Integer> debterId, Integer payerId) {
+        return (expenseDatabase.updateExpense(expenseId, description, cost, debterId, payerId));
     }
 }

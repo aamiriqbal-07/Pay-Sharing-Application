@@ -13,6 +13,8 @@ public interface ExpenseDatabase {
 
     Optional<Expense> getExpenseById(Integer id);
 
+    Optional<Expense> updateExpense(Integer expenseId, String description, Double cost, ArrayList<Integer> debterId, Integer payerId);
+
     Integer getLastExpenseId();
 
 }
